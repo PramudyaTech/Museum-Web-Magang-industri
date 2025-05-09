@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions - Museum</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .exhibition-card:hover .exhibition-overlay {
+            opacity: 1;
+        }
+        .exhibition-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="museum-img/museum-logo.png" alt="Museum Logo" class="h-16 mr-3">
+                    <a href="index.html" class="text-2xl font-bold heading text-gray-800">
+                        MUSEUM KOTA MAKASSAR
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-orange-500 transition-colors">About</a>
+                    <a href="exhibitions.html" class="text-orange-500">Exhibitions</a>
+                    <a href="events.html" class="text-gray-800 hover:text-orange-500 transition-colors">Events</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-orange-500 transition-colors">Contact</a>
+                    <a href="our-team.html" class="text-gray-800 hover:text-orange-500 transition-colors">Our Team</a>
+                    <a href="register.html" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors inline-block text-center">
+                        Register
+                    </a>
+                </div>
+
+            <!-- Mobile Navigation Button -->
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="index.html" class="text-gray-800 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-orange-500 transition-colors">About</a>
+                    <a href="exhibitions.html" class="text-orange-500">Exhibitions</a>
+                    <a href="events.html" class="text-gray-800 hover:text-orange-500 transition-colors">Events</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-orange-500 transition-colors">Contact</a>
+                    <a href="our-team.html" class="text-gray-800 hover:text-orange-500 transition-colors">Our Team</a>
+                    <a href="register.html" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors inline-block text-center">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20">
+        <div class="h-[60vh] relative">
+            <img src="https://images.pexels.com/photos/2034373/pexels-photo-2034373.jpeg" 
+                 alt="Exhibition Hall" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-5xl md:text-6xl font-bold heading text-white text-center">
+                    Current Exhibitions
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Filters -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-orange-500 text-white px-6 py-2 rounded-full">
+                    All Exhibitions
+                </button>
+                <button class="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                    Current
+                </button>
+                <button class="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                    Upcoming
+                </button>
+                <button class="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                    Past
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibitions Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Collection Card 1 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2034373/pexels-photo-2034373.jpeg" 
+                         alt="Ancient Civilizations" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ancient Civilizations</h3>
+                        <p class="text-gray-300 mb-4">Journey through the rise and fall of history's greatest empires.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection1.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                        </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 2 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2570059/pexels-photo-2570059.jpeg" 
+                         alt="Modern Art" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Modern Masterpieces</h3>
+                        <p class="text-gray-300 mb-4">Experience the evolution of contemporary art and design.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection2.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 3 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2544827/pexels-photo-2544827.jpeg" 
+                         alt="Natural History" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Natural Wonders</h3>
+                        <p class="text-gray-300 mb-4">Discover the mysteries of our natural world.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection3.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 4 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2372978/pexels-photo-2372978.jpeg" 
+                         alt="Renaissance Art" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Renaissance Masters</h3>
+                        <p class="text-gray-300 mb-4">A journey through the golden age of art and culture.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection4.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 5 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2372977/pexels-photo-2372977.jpeg" 
+                         alt="Modern Photography" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Through the Lens</h3>
+                        <p class="text-gray-300 mb-4">A century of photography and visual storytelling.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection5.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 6 -->
+                <div class="exhibition-card relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://images.pexels.com/photos/2570059/pexels-photo-2570059.jpeg" 
+                         alt="Digital Art" 
+                         class="w-full h-80 object-cover">
+                    <div class="exhibition-overlay absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Digital Revolution</h3>
+                        <p class="text-gray-300 mb-4">The future of art in the digital age.</p>
+                        <div class="flex justify-end items-center">
+                        <a href="collection6.html" class="border border-orange-500 text-orange-500 px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 items-start">
+                <div class="flex flex-col items-start">
+                    <img src="museum-img/museum-logo-footer.png" alt="Museum Logo" class="h-16 mb-1">
+                    <h3 class="text-2xl font-bold heading mb-2 text-left">MUSEUM KOTA MAKASSAR</h3>
+                    <p class="text-gray-400 text-left max-w-xs">
+                        Where history meets the future, creating unforgettable experiences for generations to come.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="exhibitions.html" class="text-gray-400 hover:text-white">Exhibitions</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="our-team.html" class="text-gray-400 hover:text-white">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Visit Us</h4>
+                    <address class="text-gray-400 not-italic">
+                        Jl. Balaikota No.11<br />
+                        Kota Makassar, 90171<br />
+                        Instagram: @museumkotamakassar<br />
+                        Email: info@museum.com
+                    </address>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/museumkotamakassar/" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Museum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
